@@ -1,1 +1,250 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio samples from "VITS2: Improving Quality and Efficiency of Single Stage Text to Speech with Adversarial Learning and Architecture Design"</title>
+    <meta charset="UTF-8">
+    <title>VITS2: Improving Quality and Efficiency of Single Stage Text to Speech with Adversarial Learning and Architecture Design</title>
+    <style>
+        red {color: red}
+        audio {width: 250px}
+    </style>
+    <script type="text/javascript">
+    function showHideSentence(num, sh) {
+      if (sh === 0) {
+        document.getElementById("sent" + num).style.display = "none";
+        document.getElementById("btn" + num).style.display = "block";
+      } else {
+        document.getElementById("sent" + num).style.display = "block";
+        document.getElementById("btn" + num).style.display = "none";
+      }
+    }
+    </script>
+</head>
+<body>
+    <article>
+      <header>
+        <h1>Audio samples from "VITS2: Improving Quality and Efficiency of Single-Stage Text-to-Speech with Adversarial Learning and Architecture Design"</h1>
+      </header>
+    </article>
+<!--    <p><b>Paper:</b> <a href="">arXiv</a></p>-->
+<!--    <p><b>Authors</b>: </p>-->
+    <div>
+      <b>Abstract:</b>
+      Single-stage text-to-speech models have been actively studied recently, and their results have outperformed two-stage pipeline systems.
+      Although the previous single-stage model has made great progress, there is room for improvement in terms of its intermittent unnaturalness, computational efficiency, and strong dependence on phoneme conversion.
+      In this work, we introduce VITS2, a single-stage text-to-speech model that efficiently synthesizes a more natural speech by improving several aspects of the previous work.
+      We propose improved structures and training mechanisms and present that the proposed methods are effective
+      in improving naturalness, similarity of speech characteristics in a multi-speaker model, and efficiency of training and inference.
+      Furthermore, we demonstrate that the strong dependence on phoneme conversion in previous works can be significantly reduced with our method, which allows a fully end-to-end single-stage approach.
+    <p></p>
+    </div>
+
+    <p class="toc_title">Contents</p>
+    <div id="toc_container">
+    <ul>
+      <li><a href="#ss">Single Speaker (LJ Speech Dataset)</a></li>
+      <li><a href="#nt">Experiments using Normalized Texts (LJ Speech Dataset)</a></li>
+      <li><a href="#ms">Multiple Speakers (VCTK Dataset)</a></li>
+      <li><a href="#cmp_jets">Comparison with JETS (Author Feedback, LJ Speech Dataset / texts from LibriTTS test set)</a></li>
+    </ul>
+    </div>
+
+    <p>&nbsp;</p>
+    <div>
+      <a name="ss"><h2>Single Speaker (LJ Speech Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="160"></td>
+          <td width="260">The only interval was the time necessary to ride in the elevator from the second to the sixth floor and walk back to the southeast corner.</td>
+          <td width="260">Here and there a book is printed in France or Germany with some pretension to good taste,</td>
+          <td width="260">Its bricks, measuring about thirteen inches square and three inches in thickness, were burned and stamped with the usual short inscription:</td>
+          <td width="260">Two weeks pass, and at last you stand on the eastern edge of the plateau</td>
+          <td width="260">the Secret Service had received from the FBI some nine thousand reports on members of the Communist Party.</td>
+        </tr>
+        <tr>
+          <td nowrap width="160">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>VITS
+          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>VITS2
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>w Deterministic <br>&nbsp;&nbsp;&nbsp;&nbsp;Duration Predictor
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>w/o Alignment Noise
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>w/o Transformer Block<br>&nbsp;&nbsp;&nbsp;&nbsp;in Normalizing Flows&nbsp;&nbsp;
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/05.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <div>
+      <a name="nt"><h2>Experiments using Normalized Texts (LJ Speech Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="160">Ground Truth&nbsp;&nbsp;</td>
+          <td width="260"><audio controls="" preload="none"><source src="samples/nt/gt/01.wav"></audio></td>
+          <td width="260"><audio controls="" preload="none"><source src="samples/nt/gt/02.wav"></audio></td>
+          <td width="260"><audio controls="" preload="none"><source src="samples/nt/gt/03.wav"></audio></td>
+          <td width="260"><audio controls="" preload="none"><source src="samples/nt/gt/04.wav"></audio></td>
+          <td width="260"><audio controls="" preload="none"><source src="samples/nt/gt/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>VITS using Normalized Texts
+          <td><audio controls="" preload="none"><source src="samples/nt/v1_nt/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/nt/v1_nt/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/nt/v1_nt/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/nt/v1_nt/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/nt/v1_nt/05.wav"></audio></td>
+        </tr>
+          <td nowrap>VITS2 using Normalized Texts
+          <td><audio controls="" preload="none"><source src="samples/nt/v2_nt/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/nt/v2_nt/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/nt/v2_nt/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/nt/v2_nt/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/nt/v2_nt/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap width="160"></td>
+          <td>
+            <div id="sent1" style="display:none" onclick="showHideSentence(1, 0)">a third miscreant made a similar but far less serious attempt in the month of July following.</div>
+            <div id="btn1" onclick="showHideSentence(1, 1)" style="cursor: pointer">Click here to view the sentence.</div>
+          </td>
+          <td>
+            <div id="sent2" style="display:none" onclick="showHideSentence(2, 0)">the same callous indifference to the moral well-being of the prisoners, the same want of employment and of all disciplinary control.</div>
+            <div id="btn2" onclick="showHideSentence(2, 1)" style="cursor: pointer">Click here to view the sentence.</div>
+          </td>
+          <td>
+            <div id="sent3" style="display:none" onclick="showHideSentence(3, 0)">during which time a host of witnesses were examined, and the committee presented three separate reports,</div>
+            <div id="btn3" onclick="showHideSentence(3, 1)" style="cursor: pointer">Click here to view the sentence.</div>
+          </td>
+          <td>
+            <div id="sent4" style="display:none" onclick="showHideSentence(4, 0)">gaming of all sorts should be peremptorily forbidden under heavy pains and penalties.</div>
+            <div id="btn4" onclick="showHideSentence(4, 1)" style="cursor: pointer">Click here to view the sentence.</div>
+          </td>
+          <td>
+            <div id="sent5" style="display:none" onclick="showHideSentence(5, 0)">A man named Lears, under sentence of transportation for an attempt at murder on board ship, got up part of the way,</div>
+            <div id="btn5" onclick="showHideSentence(5, 1)" style="cursor: pointer">Click here to view the sentence.</div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <div>
+      <a name="ms"><h2>Multiple Speakers (VCTK Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="160"></td>
+          <td width="260">We have been going for three years.</td>
+          <td width="260">Military action is the only option we have on the table today.</td>
+          <td width="260">I don't think it would make any difference.</td>
+          <td width="260">As agreed, the prime minister was driven to Westminster Hall.</td>
+          <td width="260">This film will be totally awesome.</td>
+        </tr>
+        <tr>
+          <td nowrap width="160">Ground Truth&nbsp;&nbsp;</td>
+          <td><audio controls="" preload="none"><source src="samples/ms/gt_ms/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/gt_ms/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/gt_ms/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/gt_ms/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/gt_ms/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>VITS
+          <td><audio controls="" preload="none"><source src="samples/ms/v1_ms/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/v1_ms/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/v1_ms/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/v1_ms/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/v1_ms/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>VITS2
+          <td><audio controls="" preload="none"><source src="samples/ms/v2_ms/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/v2_ms/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/v2_ms/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/v2_ms/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/ms/v2_ms/05.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <div>
+      <a name="cmp_jets"><h2>Comparison with JETS (Author Feedback, LJ Speech Dataset / texts from LibriTTS test set)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap width="160"></td>
+          <td width="260">"Now, Bannister, will you please tell us the truth about yesterday's incident?"</td>
+          <td width="260">"No; I am quite proud of my person," was the reply.</td>
+          <td width="260">I had to read it over carefully, as the text must be absolutely correct.</td>
+          <td width="260">If she could only see Phronsie for just one moment!</td>
+          <td width="260">I could not see that in either case Holmes had come upon the clue for which he was searching.</td>
+        </tr>
+        <tr>
+          <td nowrap>JETS
+          <td><audio controls="" preload="none"><source src="samples/rv/jets/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/rv/jets/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/rv/jets/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/rv/jets/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/rv/jets/05.wav"></audio></td>
+        </tr>
+        <tr>
+          <td nowrap>VITS2
+          <td><audio controls="" preload="none"><source src="samples/rv/v2/01.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/rv/v2/02.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/rv/v2/03.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/rv/v2/04.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="samples/rv/v2/05.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <br><br>
+  </body>
+</html>
