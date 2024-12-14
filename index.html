@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Audio samples from "VITS2: Improving Quality and Efficiency of Single Stage Text to Speech with Adversarial Learning and Architecture Design"</title>
+    <title>"Audio samples for Real-time Speech-to-Speech Dialogue Generation"</title>
     <meta charset="UTF-8">
-    <title>VITS2: Improving Quality and Efficiency of Single Stage Text to Speech with Adversarial Learning and Architecture Design</title>
+    <title>Audio samples for Real-time Speech-to-Speech Dialogue Generation</title>
     <style>
         red {color: red}
         audio {width: 250px}
@@ -24,93 +24,43 @@
 <body>
     <article>
       <header>
-        <h1>Audio samples from "VITS2: Improving Quality and Efficiency of Single-Stage Text-to-Speech with Adversarial Learning and Architecture Design"</h1>
+        <h1>Audio samples for Real-time Speech-to-Speech Dialogue Generation"</h1>
       </header>
     </article>
 <!--    <p><b>Paper:</b> <a href="">arXiv</a></p>-->
 <!--    <p><b>Authors</b>: </p>-->
     <div>
       <b>Abstract:</b>
-      Single-stage text-to-speech models have been actively studied recently, and their results have outperformed two-stage pipeline systems.
-      Although the previous single-stage model has made great progress, there is room for improvement in terms of its intermittent unnaturalness, computational efficiency, and strong dependence on phoneme conversion.
-      In this work, we introduce VITS2, a single-stage text-to-speech model that efficiently synthesizes a more natural speech by improving several aspects of the previous work.
-      We propose improved structures and training mechanisms and present that the proposed methods are effective
-      in improving naturalness, similarity of speech characteristics in a multi-speaker model, and efficiency of training and inference.
-      Furthermore, we demonstrate that the strong dependence on phoneme conversion in previous works can be significantly reduced with our method, which allows a fully end-to-end single-stage approach.
+        We propose the a real-time speech-to-speech dialogue generation (RTS2S-DG) capable of: (1) generating real-time responses with minimal delay based on streaming input from the conversation. 
+        (2) producing coherent and naturalistic responses with spontaneous expressions. 
+        (3) enabling fluid turn-taking, including the ability to interrupt or handle interruptions. 
+        (4) generating backchannels during others' speech. 
+        (5) producing responses of diverse lengths, ranging from short back-and-forth phrases to long-form storytelling formats.
     <p></p>
-    </div>
-
-    <p class="toc_title">Contents</p>
-    <div id="toc_container">
-    <ul>
-      <li><a href="#ss">Single Speaker (LJ Speech Dataset)</a></li>
-      <li><a href="#nt">Experiments using Normalized Texts (LJ Speech Dataset)</a></li>
-      <li><a href="#ms">Multiple Speakers (VCTK Dataset)</a></li>
-      <li><a href="#cmp_jets">Comparison with JETS (Author Feedback, LJ Speech Dataset / texts from LibriTTS test set)</a></li>
-    </ul>
     </div>
 
     <p>&nbsp;</p>
     <div>
-      <a name="ss"><h2>Single Speaker (LJ Speech Dataset)</h2></a>
+      <a name="ss"><h2>Single turn evaluation</h2></a>
       <hr>
+      <a><h4>Single turn evaluation</h4></a>
       <table>
         <tbody>
         <tr>
           <td nowrap width="160"></td>
-          <td width="260">The only interval was the time necessary to ride in the elevator from the second to the sixth floor and walk back to the southeast corner.</td>
-          <td width="260">Here and there a book is printed in France or Germany with some pretension to good taste,</td>
-          <td width="260">Its bricks, measuring about thirteen inches square and three inches in thickness, were burned and stamped with the usual short inscription:</td>
-          <td width="260">Two weeks pass, and at last you stand on the eastern edge of the plateau</td>
-          <td width="260">the Secret Service had received from the FBI some nine thousand reports on members of the Communist Party.</td>
+          <td width="660">The only interval was the time necessary to ride in the elevator <br> from the second to the sixth floor and walk back to the southeast corner.</td>
         </tr>
         <tr>
           <td nowrap width="160">Ground Truth</td>
-          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/01.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/02.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/03.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/04.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/gt_ss/05.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="audios/0_cascaded.wav"></audio></td>
         </tr>
         <tr>
           <td nowrap>VITS
-          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/01.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/02.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/03.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/04.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v1_ss/05.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="audios/1_cascaded.wav"></audio></td>
         </tr>
         <tr>
           <td nowrap>VITS2
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/01.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/02.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/03.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/04.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_ss/05.wav"></audio></td>
-        </tr>
-        <tr>
-          <td nowrap>w Deterministic <br>&nbsp;&nbsp;&nbsp;&nbsp;Duration Predictor
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/01.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/02.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/03.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/04.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_dpadv/05.wav"></audio></td>
-        </tr>
-        <tr>
-          <td nowrap>w/o Alignment Noise
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/01.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/02.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/03.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/04.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_an/05.wav"></audio></td>
-        </tr>
-        <tr>
-          <td nowrap>w/o Transformer Block<br>&nbsp;&nbsp;&nbsp;&nbsp;in Normalizing Flows&nbsp;&nbsp;
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/01.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/02.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/03.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/04.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="samples/ss/v2_as_nftr/05.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="audios/2_cascaded.wav"></audio></td>
         </tr>
         </tbody>
       </table>
