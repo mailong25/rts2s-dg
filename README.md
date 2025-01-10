@@ -1,4 +1,4 @@
 # rts2s-dg
 
 test
-[Listen to the audio](https://github.com/mailong25/rts2s-dg/blob/main/audios/0_cascaded.wav)
+[Listen to the audio](https://mailong25.github.io/rts2s-dg)
